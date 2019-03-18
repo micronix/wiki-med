@@ -1,8 +1,3 @@
-<div class="container align-middle">
-    <div class="row justify-content-md-center p-3">
-      <%= link_to  "New Facility",new_facility_path, class:'btn btn-outline-primary btn-lg align-middle' %>
-    </div>
-</div>
 
 <ul class="list-group row">
   <% @facilities.each do |f|%>
@@ -15,10 +10,6 @@
   </a>
   <div class='list-group-item-small align-middle p-3 col-2'>
     <%=link_to "Edit",edit_facility_path(f.id)%> | <%= link_to "Delete",facility_path(f.id), method: :delete, data: { confirm: 'Are you sure?'} %>
-  </div> 
+  </div>
 </ul>
   <%end%>
-
-
-    
-   

@@ -2,7 +2,7 @@
 
 <% @procedures.each do |f|%>
     <div>
-        <%=f.name%> <%=f.city%> <%=f.state%> <%=f.specialty%> 
+        <%=f.name%> 
         <%= link_to "Edit",edit_procedure_path(f.id) %> | <%= link_to "Delete",procedure_path(f.id), method: :delete,
               data: { confirm: 'Are you sure?'} %>
     </div>

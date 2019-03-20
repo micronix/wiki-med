@@ -1,3 +1,14 @@
+<main role="main">
+  <div class="container border border-secondary rounded-lg mt-3">
+    <h1 class="text-center">
+        Facilities
+    </h1>
+  </div>
+
+  <h4 class="text-center p-2">Search</h4>
+
+<%= link_to  "New Facility",new_facility_path, class:'new_entry' %>
+
 
 <ul class="list-group row">
   <% @facilities.each do |f|%>

@@ -26,7 +26,7 @@ class ProceduresController < ApplicationController
     #edit exisiting database entry -- only available to admin? -------
     def edit
         @procedure = Procedure.find(params[:id])
-        @facility = Facility.all
+        @facilities = Facility.all
     end
 
     #update exisiting database entry -- only available to admin? -------

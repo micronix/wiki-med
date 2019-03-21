@@ -1,0 +1,25 @@
+<%= form_tag form_index_path, method:"post" do %>
+  <%= radio_button_tag :type,'item'%>
+  <%=label_tag :type_item, "Item"%>
+  <%= radio_button_tag :type,'procedure'%>
+  <%=label_tag :type_procedure, "Procedure"%>
+  <div class="p-2"><%=text_field_tag :name, "" ,placeholder: 'Name'%></div>
+  <div class="p-2"><%=date_field_tag :date, placeholder: 'Date' %></div>
+  <div class="p-2"><%=text_field_tag :description, "", placeholder: 'Description' %></div>
+  <div class="p-2"><%=number_field_tag :price, "",placeholder: 'Price', min: 0, step: 0.01 %></div>
+  <div class="p-2">
+     <select name='facility_id'>
+       <option>
+         <% @facilities.each do |f| %>
+           <option value="<%= f.id %>", placeholder:"Facility"><%= f.name %></option>
+         <% end %>
+       </option>
+     </select>
+   </div>
+  <div class="p-2"><%=submit_tag 'Submit', class:'btn btn-outline-primary'%></div>
+<%end%>
+
+<div class="text-center p-2">
+  <%= link_to  "Add New Facility",new_facility_path, class:"btn btn-sm btn-outline-secondary" %>
+  <h6>Please choose this option if your Facility is not listed.</h6>
+</div>

@@ -1,0 +1,21 @@
+<%=form_for @facility do |f|%>
+    <div class="p-2">
+        <%=f.text_field  :name ,placeholder:"Name of Facility"%>
+    </div>
+    <div class="p-2">
+        <%=f.text_field :city ,placeholder:"City"%>
+    </div>
+    <div class="p-2">
+        <%=f.text_field :state ,placeholder:"State"%>
+    </div>
+    <div class="p-2">
+        <%=f.text_field :zip ,placeholder:"ZIP Code"%>
+    </div>
+    <div class="p-2">
+        <%=f.text_field :specialty ,placeholder:"Speciality of Facility"%>
+    </div>
+     <div class="p-2">
+        <%=f.submit "Create"%>
+    </div>
+
+<%end%>

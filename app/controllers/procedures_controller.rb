@@ -17,7 +17,7 @@ class ProceduresController < ApplicationController
     procedure.date = params[:procedure][:date]
     procedure.description = params[:procedure][:description]
     procedure.price = params[:procedure][:price]
-    procedure.facility_id = params[:procedure][:facility_id]
+    procedure.facility_id = params[:facility_id]
     procedure.status = "pending"
     procedure.save
     redirect_to "/"
@@ -43,6 +43,10 @@ class ProceduresController < ApplicationController
   end
     
   def show
+  end
+  
+  def procedure_params
+    params.require(:procedure).permit(:name, :date, :description, :price)
   end
     
   #destroy database entry 

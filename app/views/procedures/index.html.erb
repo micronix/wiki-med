@@ -1,21 +1,37 @@
-
 <main role="main">
+
   <div class="container border border-secondary rounded-lg mt-3">
     <h1 class="text-center">
         Procedures
     </h1>
   </div>
 
-<h4 class="text-center p-2">Search</h4>
+  <h4 class="text-center p-2">Search</h4>
 
-<%= link_to  "New Procedure",new_procedure_path, class:'btn btn-primary btn-sm btn-block' %>
+  <%= link_to  "New Procedure",new_procedure_path, class:'btn btn-primary btn-sm btn-block' %>
 
-<%= @procedures.each do |f|%>
-    <div>
-        <%=f.name%> <%=f.date%> <%=f.description%> $<%=f.price%> Facility Name:<%=f.facility_id%>
-        <%= link_to "Edit",edit_procedure_path(f.id) %> | <%= link_to "Delete",procedure_path(f.id), method: :delete,
-              data: { confirm: 'Are you sure?'} %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      <%= @procedures.each do |p|%>
+      <div class="col-md-3 ">
+        <div class="card mb-3">
+          <div class="card-header" align="center"><%=p.name%></div>
+          <div class="card-body" align='left'>
+            <%=p.description%>
+            <div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="btn-group p-2">
+              <%= link_to "View", procedure_path(p), class:"btn btn-sm btn-outline-secondary"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+      </div>
     </div>
-<%end%>
+  </div>
 
-</div>
+</main>

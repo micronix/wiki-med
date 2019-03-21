@@ -1,26 +1,25 @@
 <main role="main">
-  <div class="container border border-secondary rounded-lg mt-3">
-    <h1 class="text-center">
+    <div class="container border border-secondary rounded-lg mt-3">
+      <h1 class="text-center">
         Facilities
-    </h1>
-  </div>
+      </h1>
+    </div>
 
   <h4 class="text-center p-2">Search</h4>
 
-<%= link_to  "New Facility",new_facility_path, class:'new_entry' %>
+  <%= link_to  "New Facility",new_facility_path, class:'btn btn-primary btn-sm btn-block' %>
 
-
-<ul class="list-group row">
-  <% @facilities.each do |f|%>
-  <a href="/facilities/<%=f.id%>" class="list-group-item list-group-item-action col-4">
-    <h4 class=''><%=f.name%></h4>
-    <h6><%=f.specialty%></h6>
-    <div>
-      <%=f.city%>, <%=f.state%>
-    </div>
-  </a>
-  <div class='list-group-item-small align-middle p-3 col-2'>
-    <%=link_to "Edit",edit_facility_path(f.id)%> | <%= link_to "Delete",facility_path(f.id), method: :delete, data: { confirm: 'Are you sure?'} %>
-  </div>
-</ul>
-  <%end%>
+  <ul class="list-group row p-2">
+    <% @facilities.each do |f|%>
+      <a href="/facilities/<%=f.id%>" class="list-group-item list-group-item-action col-4">
+        <h4 class=''><%=f.name%></h4>
+        <h6><%=f.specialty%></h6>
+        <div>
+          <%=f.city%>, <%=f.state%>
+        </div>
+      </a>
+      <div class='list-group-item-small align-middle p-3 col-2'>
+      </div>
+  </ul>
+    <%end%>
+</main>

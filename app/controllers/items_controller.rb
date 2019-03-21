@@ -2,16 +2,16 @@ class ItemsController < ApplicationController
     def index
         @items=Item.all
     end
-    
+
     def show
         @item=Item.find(params[:id])
     end
-    
+
     def new
         @item=Item.new
         @facilities=Facility.all
     end
-    
+
     def create
         @item=Item.new
         @item.name=params[:item][:name].upcase
@@ -24,5 +24,5 @@ class ItemsController < ApplicationController
         @item.save
         redirect_to items_path
     end
-    
+
 end

@@ -1,11 +1,11 @@
-All Items | <%= link_to "Pending Items", admins_path, method: :'get' %>
+All Items | <%= link_to "Pending Items", admins_path %>
 
 <div>
   <% @items.each do |item|%>
     <div>
       <%=item.name%> <%= item.date %> <%= item.description %> <%= item.price %> <%= item.status %> <%= item.facility_id %>
-      <%= link_to "Edit", edit_item_path(item.id), method: :'get' %>
-      <%= link_to "Delete", item_path(item.id), method: :'delete' %>
+      <%= link_to "Edit", edit_item_path(item) %>
+      <%= link_to "Delete", item_path(item), method: :'delete', data: { confirm: 'Are you sure?'} %>
     </div>
   <%end%>
 </div>

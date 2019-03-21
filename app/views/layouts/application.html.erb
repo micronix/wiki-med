@@ -15,19 +15,27 @@
           <a href="/procedures" class="nav-link">Procedures</a>
         </li>
         <li class= "nav-item">
+          <a href="/items" class="nav-link">Items</a>
+        </li>
+        <li class= "nav-item">
           <a href="/facilities" class="nav-link">Facilities</a>
         </li>
   </nav>
+  <style>
+
+
+  </style>
 </head>
 <body>
-  
+<div class="ml-3">
 <%= yield %>
+</div>
 <div class="card-footer text-muted text-right">
     <% if user_signed_in? %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary") %>        
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary") %>
       <% else %>
-        <%=link_to('Login', new_user_session_path, class:"btn btn-outline-primary")  %>  
-      <% end %> 
+        <%=link_to('Login', new_user_session_path, class:"btn btn-outline-primary")  %>
+      <% end %>
 </div>
 </body>
 </html>
